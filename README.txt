@@ -1,2 +1,1 @@
-This website was created by Tariq Elouzeh
-All rights reserved
+This is a sample project for students of the following udemy course to download and use:
