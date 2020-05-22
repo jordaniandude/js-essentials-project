@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  text-align: center;
+  font-family: "Harmattan", sans-serif;
+  font-size: 20px;
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+  padding-top: 0px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    width: 100%; /* The width is 100%, when the viewport is 1000px or smaller */
+  }
+}
+
+ul.nav-style-ul {
+  list-style-type: none;
+  margin-top: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li.nav-style-li {
+  float: right;
+}
+
+li.nav-style-li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 17px;
+  text-decoration: none;
+}
+
+li.nav-style-li a:hover {
+  background-color: #111;
+}
+
+.title-name {
+  display: inline;
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+}
+
+/* Skills section classes */
+.bar {
+  background: grey;
+  display: block;
+  height: 14px;
+}
+.bar span {
+  height: 14px;
+  float: left;
+  background: teal;
+}
+.java {
+  width: 90%;
+  animation: java 2s;
+}
+.android {
+  width: 50%;
+  animation: android 2s;
+}
+.javascript {
+  width: 80%;
+  animation: javascript 2s;
+}
+.html {
+  width: 65%;
+  animation: html 2s;
+}
+@keyframes java {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+@keyframes android {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@keyframes javascript {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 65%;
+  }
+}
+
+/* End of Skills section */
+
+.left {
+  float: left;
+  width: 30%;
+  padding: 20px;
+  padding-top: 0px;
+}
+.right {
+  float: right;
+  width: 70%;
+  padding: 20px;
+  padding-top: 0px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Start of Experience section */
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: teal;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #ff9f55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left-exp {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right-exp {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left-exp::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid teal;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent teal;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right-exp::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid teal;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent teal transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right-exp::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: teal;
+  color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left-exp::after,
+  .right-exp::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right-exp {
+    left: 0%;
+  }
+}
+
+/* End of Experience section */
+
+.footer {
+  height: 40px;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+.social{
+  width: 20px;
+  margin: 5px;
+}
